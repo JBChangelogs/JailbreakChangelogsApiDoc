@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Changelogs | API Documentaton</title>
+    <meta name="description" content="">
+    <meta name="author" content="ticlekiwi">
+    <meta
+      property="og:title"
+      content="Jailbreak Changelogs API Documentation."
+    />
+    <meta
+      property="og:description"
+      content="View the documentation for our public API."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:image"
+      content="https://res.cloudinary.com/dsvlphknq/image/upload/v1727900260/logos/api_docs.png
+      "
+    />
+
+    <meta property="og:image:width" content="2328" />
+    <meta property="og:image:height" content="1054" />
+    <meta http-equiv="cleartype" content="on">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/hightlightjs-dark.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300&family=Source+Code+Pro:wght@300&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="css/style.css" media="all">
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+<div class="left-menu">
+    <div class="content-logo">
+        <div class="logo">
+            <img alt="Changelogs API Logo" title="LOGO" src="images/logo.png" height="50" />
+            <span>Changelogs API</span>
+        </div>
+        <button class="burger-menu-icon" id="button-menu-mobile">
+            <svg width="34" height="34" viewBox="0 0 100 100"><path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"></path><path class="line line2" d="M 20,50 H 80"></path><path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"></path></svg>
+        </button>
+    </div>
+    <div class="mobile-menu-closer"></div>
+    <div class="content-menu">
+        <div class="content-infos">
+            <div class="info"><b>Version:</b> 1.0.0</div>
+            <div class="info"><b>Last Updated:</b> 1st Oct, 2024</div>
+        </div>
+        <ul>
+            <li class="scroll-to-link active" data-target="content-get-started">
+                <a>Get Started</a>
+            </li>
+            <li class="scroll-to-link active" data-target="content-items">
+                <a>Items</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-changelogs">
+                <a>Changelogs</a>
+            </li>
+            <li class="scroll-to-link active" data-target="content-seasons">
+                <a>Seasons</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-rewards">
+                <a>Rewards</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-comments">
+                <a>Comments</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="content-page">
+    <div class="content">
+        <div class="overflow-hidden content-section" id="content-notice">
+            <h2>Notice</h2>
+            <p>
+                The public api is still experimental!
+                <br>
+                If you see <a class="alert-icon" href="#" title="This is not implemented yet!">!</a> that means it is not yet implemented.
+            </p>
+        </div>
+        <div class="overflow-hidden content-section" id="content-get-started">
+            
+            <h1>Get started</h1>
+            <pre>
+    Default API Link
+
+        https://api.jailbreakchangelogs.xyz/
+                </pre>
+                
+                <p>
+                    The Jailbreak Changelogs API allows developers and users to access information about Jailbreak, such as changelogs, seasons, and comments from our website.
+                </p>
+                <p>
+                    To use our API, you will need to generate an API key at: <a href="https://jailbreakchangelogs.xyz/keys">https://jailbreakchangelogs.xyz/keys</a>. Please note that you must set the permissions you require.
+                </p>
+                <p>
+                    Violations of our API/TOS will result in blacklisting from this API and the deletion of your API key(s). This includes excessive requests and using our data for your own information services that we already provide, such as a Discord bot or website.
+                </p>
+                <p>
+                    If you have any questions, concerns, or need help, please don't hesitate to reach out to us at <a href="mailto:support@jailbreakchangelogs.xyz">support@jailbreakchangelogs.xyz</a>.
+                </p>
+        </div>
+        <div class="overflow-hidden content-section" id="content-items">
+            <h2>Items</h2>
+            <h4 id="content-item-changelog">Changelog Item</h4>
+            <pre>
+                <h4>Json example of a <a class="highlighted scroll-to-link active" data-target="content-item-changelog">Changelog</a> item:</h4>
+                <code class="highlighted break-word">
+{
+  "id": 2,
+  "title": "April 22nd 2017 / Miscellaneous Update 01",
+  "sections": "- Fixed the Bank robbery not starting when you enter the building. - Cops can no longer arrest innocent prisoners. - After the player dies, the body would split instead of ragdolling.",
+  "image_url": "https://res.cloudinary.com/dsvlphknq/image/upload/v1727037972/changelogs/changelog-image-2.png"
+}
+</code>
+            </pre>
+            <table class="central-overflow-x">
+                <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>ID</td>
+                    <td>Integer</td>
+                    <td>The specified changelog ID.</td>
+                </tr>
+                <tr>
+                    <td>Title</td>
+                    <td>String</td>
+                    <td>Title of the requested changelog.</td>
+                </tr>
+                <tr>
+                    <td>Sections</td>
+                    <td>String</td>
+                    <td>
+                        Formatted loosely in markdown, a list of fields for a changelog.
+                    </td>
+                </tr>
+                <tr>
+                    <td>Image URL</td>
+                    <td>String</td>
+                    <td>
+                        The image associated with the changelog.
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <h4 id="content-item-season">Season Item</h4>
+            <pre>
+                <h4>Json example of a <a class="highlighted scroll-to-link active" data-target="content-item-season">Season</a> item:</h4>
+                <code class="highlighted break-word">
+{
+  "season": 22,
+  "title": "Visiting America",
+  "description": "The theme of the season is called \"Visiting America\" (initially \"Season 22: Made in America\"), which is featuring prizes themed around the United States of America. The season began on June 21, 2024 and ended on September 17, 2024, and lasted for 87 days. This makes it the longest contract-based season."
+}
+</code>
+            </pre>
+            <table class="central-overflow-x">
+                <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Season</td>
+                    <td>Integer</td>
+                    <td>The specified season number.</td>
+                </tr>
+                <tr>
+                    <td>Title</td>
+                    <td>String</td>
+                    <td>Title of the requested season.</td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td>String</td>
+                    <td>
+                        Description of the requested season.
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            
+            <h4 id="content-item-reward">Reward Item</h4>
+            <pre>
+                <h4>Json example of a <a class="highlighted scroll-to-link active" data-target="content-item-reward">Reward</a> item:</h4>
+                <code class="highlighted break-word">
+{
+  "id": 247,
+  "season_number": 22,
+  "item": "Fabulous Wall Furniture",
+  "requirement": "Level 2",
+  "link": "https://res.cloudinary.com/dsvlphknq/image/upload/v1727033155/Season/22/Level_2.png",
+  "exclusive": "False",
+  "bonus": "False"
+}
+</code>
+            </pre>
+            <table class="central-overflow-x">
+                <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>ID</td>
+                    <td>Integer</td>
+                    <td>The reward ID, NOT the level for the reward.</td>
+                </tr>
+                <tr>
+                    <td>Season Number</td>
+                    <td>Integer</td>
+                    <td>Season to which the reward belongs.</td>
+                </tr>
+                <tr>
+                    <td>Item</td>
+                    <td>String</td>
+                    <td>
+                        The reward's item.
+                    </td>
+                </tr>
+                <tr>
+                    <td>Requirement</td>
+                    <td>String</td>
+                    <td>
+                        The requirement for the reward.
+                    </td>
+                </tr>
+                <tr>
+                    <td>Link</td>
+                    <td>String</td>
+                    <td>
+                        The image of the reward.
+                    </td>
+                </tr>
+                <tr>
+                    <td>Exclusive</td>
+                    <td>Boolean</td>
+                    <td>
+                        Whether the item is a season pass item or not.
+                    </td>
+                </tr>
+                <tr>
+                    <td>Bonus</td>
+                    <td>Boolean</td>
+                    <td>
+                        Whether the item is a bonus item or not.
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <h4 id="content-item-comment">Comment Item</h4>
+            <pre>
+                <h4>Json example of a <a class="highlighted scroll-to-link active" data-target="content-item-comment">Comment</a> item:</h4>
+                <code class="highlighted break-word">
+{
+  "id": 41,
+  "user_id": "659865209741246514",
+  "content": "1",
+  "date": 1727736732,
+  "item_id": 23,
+  "item_type": "season"
+}
+</code>
+            </pre>
+            <table class="central-overflow-x">
+                <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>ID</td>
+                    <td>Integer</td>
+                    <td>The comment ID.</td>
+                </tr>
+                <tr>
+                    <td>User ID</td>
+                    <td>Integer</td>
+                    <td>The author of the comment, Discord user ID.</td>
+                </tr>
+                <tr>
+                    <td>Content</td>
+                    <td>String</td>
+                    <td>
+                        The content of the comment.
+                    </td>
+                </tr>
+                <tr>
+                    <td>Date</td>
+                    <td>Integer</td>
+                    <td>
+                        The unix timestamp the comment was posted.
+                    </td>
+                </tr>
+                <tr>
+                    <td>Item ID</td>
+                    <td>Integer</td>
+                    <td>
+                        The ID this comment belongs to, such as season "13".
+                    </td>
+                </tr>
+                <tr>
+                    <td>Item Type</td>
+                    <td>String</td>
+                    <td>
+                        The type of comment this is, such as changelog or season.
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="overflow-hidden content-section" id="content-changelogs">
+            <h2>changelogs</h2>
+            
+                        <pre>
+      <h4>Example request | fetching changelog #1:</h4>
+                            <code class="highlighted break-word">
+curl -X GET "https://api.jailbreakchangelogs.xyz/changelogs/get?id=1" \
+-H "Authorization: YOUR_API_KEY"
+</code>
+This will return a <a class="highlighted scroll-to-link active" data-target="content-item-changelog">Changelog</a> item
+                </pre>
+
+                                        <pre>
+      <h4>Example request | fetching all changelogs:</h4>
+                            <code class="highlighted break-word">
+curl -X GET "https://api.jailbreakchangelogs.xyz/changelogs/list" \
+-H "Authorization: YOUR_API_KEY"
+</code>
+This will return a list of <a class="highlighted scroll-to-link active" data-target="content-item-changelog">Changelog</a> items
+
+
+
+                </pre>
+            <p>
+                There are two changelog endpoints:
+                <br>
+
+                <h4><code class="higlighted break-word">/changelogs/get</code></h4>
+                <table class="central-overflow-x">
+                    <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Authorization</td>
+                        <td>String</td>
+                        <td>Your API key.</td>
+                    </tr>
+                    <tr>
+                        <td>ID</td>
+                        <td>Integer</td>
+                        <td>The <a class="highlighted scroll-to-link active" data-target="content-item-changelog">Changelog</a> you are requesting.</td>
+                    </tr>
+                    </tbody>
+                </table>
+                
+                <br>
+                <h4><code class="higlighted break-word">/changelogs/list</code> </h4>
+                <table class="central-overflow-x">
+                    <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Authorization</td>
+                        <td>String</td>
+                        <td>Your API key.</td>
+                    </tr>
+                    <tr>
+                        <td> <a class="alert-icon scroll-to-link" data-target="content-notice" href="#" title="This is not implemented yet!">!</a> Limit</td>
+                        <td>Integer</td>
+                        <td>The Limit of <a class="highlighted scroll-to-link active" data-target="content-item-changelog">Changelogs</a> to fetch.</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </p>
+            <br>
+        </div>
+        
+        <div class="overflow-hidden content-section" id="content-seasons">
+            <h2>seasons</h2>
+            
+                        <pre>
+      <h4>Example request | fetching season 13:</h4>
+                            <code class="highlighted break-word">
+curl -X GET "https://api.jailbreakchangelogs.xyz/seasons/get?season=13" \
+-H "Authorization: YOUR_API_KEY"
+</code>
+This will return a <a class="highlighted scroll-to-link active" data-target="content-item-changelog">Season</a> item
+                </pre>
+
+                                        <pre>
+      <h4>Example request | fetching all changelogs:</h4>
+                            <code class="highlighted break-word">
+curl -X GET "https://api.jailbreakchangelogs.xyz/season/list" \
+-H "Authorization: YOUR_API_KEY"
+</code>
+This will return a list of <a class="highlighted scroll-to-link active" data-target="content-item-changelog">Season</a> items
+
+
+
+                </pre>
+            <p>
+                There are two season endpoints:
+                <br>
+
+                <h4><code class="higlighted break-word">/seasons/get</code></h4>
+                <table class="central-overflow-x">
+                    <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Authorization</td>
+                        <td>String</td>
+                        <td>Your API key.</td>
+                    </tr>
+                    <tr>
+                        <td>Season</td>
+                        <td>Integer</td>
+                        <td>The <a class="highlighted scroll-to-link active" data-target="content-item-season">Season</a> you are requesting.</td>
+                    </tr>
+                    </tbody>
+                </table>
+                
+                <br>
+                <h4><code class="higlighted break-word">/seasons/list</code> </h4>
+                <table class="central-overflow-x">
+                    <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Authorization</td>
+                        <td>String</td>
+                        <td>Your API key.</td>
+                    </tr>
+                    <tr>
+                        <td> <a class="alert-icon scroll-to-link" data-target="content-notice" href="#" title="This is not implemented yet!">!</a> Limit</td>
+                        <td>Integer</td>
+                        <td>The Limit of <a class="highlighted scroll-to-link active" data-target="content-item-season">Seasons</a> to fetch.</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </p>
+            <br>
+        </div>
+        <div class="overflow-hidden content-section" id="content-rewards">
+            <h2>Rewards</h2>
+            
+                        <pre>
+      <h4>Example request | fetching rewards for season 16:</h4>
+                            <code class="highlighted break-word">
+curl -X GET "https://api.jailbreakchangelogs.xyz/rewards/get?season=16" \
+-H "Authorization: YOUR_API_KEY"
+</code>
+This will return a <a class="highlighted scroll-to-link active" data-target="content-item-reward">Reward</a> item
+                </pre>
+
+                                        <pre>
+      <h4>Example request | fetching all rewards:</h4>
+                            <code class="highlighted break-word">
+curl -X GET "https://api.jailbreakchangelogs.xyz/rewards/list" \
+-H "Authorization: YOUR_API_KEY"
+</code>
+This will return a list of <a class="highlighted scroll-to-link active" data-target="content-item-reward">Reward</a> items
+
+
+
+                </pre>
+            <p>
+                There are two reward endpoints:
+                <br>
+
+                <h4><code class="higlighted break-word">/rewards/get</code></h4>
+                <table class="central-overflow-x">
+                    <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Authorization</td>
+                        <td>String</td>
+                        <td>Your API key.</td>
+                    </tr>
+                    <tr>
+                        <td>Season</td>
+                        <td>Integer</td>
+                        <td>The <a class="highlighted scroll-to-link active" data-target="content-item-season">Seasons</a> <a class="highlighted scroll-to-link active" data-target="content-item-season">Rewards</a> you are fetching.</td>
+                    </tr>
+                    </tbody>
+                </table>
+                
+                <br>
+                <h4><code class="higlighted break-word">/rewards/list</code> </h4>
+                <table class="central-overflow-x">
+                    <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Authorization</td>
+                        <td>String</td>
+                        <td>Your API key.</td>
+                    </tr>
+                    <tr>
+                        
+                        <td> <a class="alert-icon scroll-to-link" data-target="content-notice" href="#" title="This is not implemented yet!">!</a> Limit</td>
+                        <td>Integer</td>
+                        <td>The Limit of <a class="highlighted scroll-to-link active" data-target="content-item-season">Seasons</a> to fetch.</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </p>
+            <br>
+        </div>
+        <div class="overflow-hidden content-section" id="content-rewards">
+            <h2>Comments</h2>
+            
+                        <pre>
+      <h4>Example request | fetching comments for season 16:</h4>
+                            <code class="highlighted break-word">
+curl -X GET "https://api.jailbreakchangelogs.xyz/comments/get?type=season&id=16" \
+-H "Authorization: YOUR_API_KEY"
+</code>
+This will return a list of <a class="highlighted scroll-to-link active" data-target="content-item-reward">Comment</a> items
+                </pre>
+                        <pre>
+      <h4>Example request | fetching comments for changelogs:</h4>
+                            <code class="highlighted break-word">
+curl -X GET "https://api.jailbreakchangelogs.xyz/comments/get?type=changelog" \
+-H "Authorization: YOUR_API_KEY"
+</code>
+This will return a list of <a class="highlighted scroll-to-link active" data-target="content-item-reward">Comment</a> items
+                </pre>
+                        <pre>
+      <h4>Example request | fetching comment:</h4>
+                            <code class="highlighted break-word">
+curl -X GET "https://api.jailbreakchangelogs.xyz/comments/get?id=1" \
+-H "Authorization: YOUR_API_KEY"
+</code>
+This will return a <a class="highlighted scroll-to-link active" data-target="content-item-reward">Comment</a> item
+                </pre>
+            <p>
+                There are is only one comments endpoint:
+                <br>
+
+                <h4><code class="higlighted break-word">/comments/get</code></h4>
+                <table class="central-overflow-x">
+                    <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Authorization</td>
+                        <td>String</td>
+                        <td>Your API key.</td>
+                    </tr>
+                    <tr>
+                        <td>(Optional) Item ID</td>
+                        <td>Integer</td>
+                        <td>The <a class="highlighted scroll-to-link active" data-target="content-item-changelog">Changelog</a>, <a class="highlighted scroll-to-link active" data-target="content-item-season">Season</a>, or <a class="highlighted scroll-to-link active" data-target="content-item-comment">Comment</a> ID.</td>
+                    </tr>
+                    <tr>
+                        <td>(Optional) Item Type</td>
+                        <td>String</td>
+                        <td>The type of item to fetch, such as changelog or season, blank will fetch the comment by ID</td>
+                    </tr>
+                    </tbody>
+                </table>
+            
+            </p>
+            <br>
+        </div>
+    </div>
+        </div>
+    </div>
+    
+</div>
+<!-- Github Corner Ribbon - to remove (Ribbon created with : http://tholman.com/github-corners/ )-->
+<a href="https://github.com/JBChangelogs/JailbreakChangelogs" class="github-corner" aria-label="View source on Github" title="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="z-index:99999; fill:#70B7FD; color:#fff; position: fixed; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}@media only screen and (max-width:680px){ .github-corner > svg { right: auto!important; left: 0!important; transform: rotate(270deg)!important;}}</style>
+<!-- END Github Corner Ribbon - to remove -->
+<script src="js/script.js"></script>
+</body>
+</html>
