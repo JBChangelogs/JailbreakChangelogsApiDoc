@@ -1,7 +1,7 @@
 [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](./LICENSE)
 
 > [!CAUTION]
-> The only official sources for information and updates about the Jailbreak Changelogs API are https://api.jailbreakchangelogs.xyz and the [official Discord server](https://discord.gg/jailbreak). Any other websites or platforms claiming to represent or provide content for this API are not controlled by us.
+> The only official sources for information and updates about the Jailbreak Changelogs API is https://docs.jailbreakchangelogs.xyz/ . Any other websites or platforms claiming to represent or provide content for this API are not controlled by us.
 
 ![Logo](https://res.cloudinary.com/dsvlphknq/image/upload/v1727900260/logos/api_docs.png)
 
