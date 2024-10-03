@@ -587,8 +587,16 @@ curl -X GET "https://api.jailbreakchangelogs.xyz/comments/get?id=1" \
 </code>
 This will return a <a class="highlighted scroll-to-link active" data-target="content-item-reward">Comment</a> item
                 </pre>
+                        <pre>
+      <h4>Example request | fetching comments by user:</h4>
+                            <code class="highlighted break-word">
+curl -X GET "https://api.jailbreakchangelogs.xyz/comments/get/user?author=1" \
+-H "Authorization: YOUR_API_KEY"
+</code>
+This will return a list of <a class="highlighted scroll-to-link active" data-target="content-item-reward">Comment</a> items
+                </pre>
             <p>
-                There are is only one comments endpoint:
+                There are two comments endpoints:
                 <br>
 
                 <h4><code class="higlighted break-word">/comments/get</code></h4>
@@ -618,7 +626,34 @@ This will return a <a class="highlighted scroll-to-link active" data-target="con
                     </tr>
                     </tbody>
                 </table>
-            
+                <h4><code class="higlighted break-word">/comments/get/user</code></h4>
+                <table class="central-overflow-x">
+                    <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Authorization</td>
+                        <td>String</td>
+                        <td>Your API key.</td>
+                    </tr>
+                    <tr>
+                        <td>(Optional) User ID</td>
+                        <td>Integer</td>
+                        <td>The user ID of the comment author. (Discord)</td>
+                    </tr>
+                    <tr>
+                        
+                        <td> <a class="alert-icon scroll-to-link" data-target="content-notice" href="#" title="This is not implemented yet!">!</a> Limit</td>
+                        <td>Integer</td>
+                        <td>The Limit of <a class="highlighted scroll-to-link active" data-target="content-item-comment">Comments</a> to fetch.</td>
+                    </tr>
+                    </tbody>
+                </table>
             </p>
             <br>
         </div>
