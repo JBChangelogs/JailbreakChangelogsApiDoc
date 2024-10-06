@@ -19,6 +19,7 @@
       content="https://res.cloudinary.com/dsvlphknq/image/upload/v1727900260/logos/api_docs.png
       "
     />
+    
 
     <meta property="og:image:width" content="2328" />
     <meta property="og:image:height" content="1054" />
@@ -71,17 +72,25 @@
             <li class="scroll-to-link" data-target="content-comments">
                 <a>Comments</a>
             </li>
+            <li class="scroll-to-link" data-target="content-users">
+                <a>Users</a>
+            </li>
         </ul>
     </div>
 </div>
 <div class="content-page">
     <div class="content">
         <div class="overflow-hidden content-section" id="content-notice">
-            <h2>Notice</h2>
+            <h2 style="color: rgb(196, 69, 69);">Notice:</h2>
             <p>
                 The public api is still experimental!
                 <br>
                 If you see <a class="alert-icon" href="#" title="This is not implemented yet!">!</a> that means it is not yet implemented.
+            </p>
+            <p>
+                Most of our Parameters are used through URL params, not headers or body.
+                <br>
+                However, this does not include the authorization parameter, which can be sent through either a header or URL param.
             </p>
         </div>
         <div class="overflow-hidden content-section" id="content-get-started">
@@ -329,6 +338,211 @@
                 </tr>
                 </tbody>
             </table>
+            <h4 id="content-item-follower">Follower Item</h4>
+            <pre>
+                <h4>Json example of a <a class="highlighted scroll-to-link active" data-target="content-item-follower">Follower</a>:</h4>
+                <code class="highlighted break-word">
+{
+  "follower_id": "1019539798383398946",
+  "created_at": 1728066960
+}
+</code>
+            </pre>
+            <table class="central-overflow-x">
+                <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Follower ID</td>
+                    <td>Integer</td>
+                    <td>The followers User ID.</td>
+                </tr>
+                <tr>
+                    <td>Created At</td>
+                    <td>Integer</td>
+                    <td>The unix timestamp the user followed the requested person.</td>
+                </tr>
+                </tbody>
+            </table>
+            <h4 id="content-item-followed">Followed Item</h4>
+            <pre>
+                <h4>Json example of a <a class="highlighted scroll-to-link active" data-target="content-item-followed">Followed</a> user:</h4>
+                <code class="highlighted break-word">
+{
+  "followed_id": "1019539798383398946",
+  "created_at": 1728068690
+}
+</code>
+            </pre>
+            <table class="central-overflow-x">
+                <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Followed ID</td>
+                    <td>Integer</td>
+                    <td>The followed user's ID.</td>
+                </tr>
+                <tr>
+                    <td>Created At</td>
+                    <td>Integer</td>
+                    <td>The unix timestamp the requested person followed the user.</td>
+                </tr>
+                </tbody>
+            </table>
+            <h4 id="content-item-user">User Item</h4>
+            <pre>
+                <h4>Json example of a <a class="highlighted scroll-to-link active" data-target="content-item-user">User</a></h4>
+                <code class="highlighted break-word">
+{
+  "id": "659865209741246514",
+  "username": "jakobiis",
+  "avatar": "556833499d1f3f7cc3cc0d9eca75df7c",
+  "banner": null,
+  "global_name": "Jakobiis",
+  "locale": "en-US"
+}
+</code>
+            </pre>
+            <table class="central-overflow-x">
+                <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ID</td>
+                        <td>String</td>
+                        <td>The unique identifier of the user.</td>
+                    </tr>
+                    <tr>
+                        <td>Username</td>
+                        <td>String</td>
+                        <td>The username of the user.</td>
+                    </tr>
+                    <tr>
+                        <td>Avatar</td>
+                        <td>String</td>
+                        <td>The hash of the user's avatar image.</td>
+                    </tr>
+                    <tr>
+                        <td>Banner</td>
+                        <td>String or Null</td>
+                        <td>The banner of the user, if available.</td>
+                    </tr>
+                    <tr>
+                        <td>Global Name</td>
+                        <td>String</td>
+                        <td>The global display name of the user.</td>
+                    </tr>
+                    <tr>
+                        <td>Locale</td>
+                        <td>String</td>
+                        <td>The user's locale (e.g., language and region).</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4 id="content-item-settings">Settings</h4>
+            <pre>
+                <h4>Json example of <a class="highlighted scroll-to-link active" data-target="content-item-settings">Settings</a></h4>
+                <code class="highlighted break-word">
+{
+  "user_id": "659865209741246514",
+  "profile_public": 1,
+  "show_recent_comments": 1,
+  "hide_following": 1,
+  "hide_followers": 1,
+  "updated_at": 1728070812
+}
+</code>
+            </pre>
+            <table class="central-overflow-x">
+                <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>User ID</td>
+                        <td>String</td>
+                        <td>The unique identifier of the user.</td>
+                    </tr>
+                    <tr>
+                        <td>Profile Public</td>
+                        <td>Integer</td>
+                        <td>Indicates if the user's profile is public (1) or private (0).</td>
+                    </tr>
+                    <tr>
+                        <td>Show Recent Comments</td>
+                        <td>Integer</td>
+                        <td>Indicates if recent comments are shown (1) or hidden (0).</td>
+                    </tr>
+                    <tr>
+                        <td>Hide Following</td>
+                        <td>Integer</td>
+                        <td>Indicates if the user's following list is hidden (1) or visible (0).</td>
+                    </tr>
+                    <tr>
+                        <td>Hide Followers</td>
+                        <td>Integer</td>
+                        <td>Indicates if the user's followers list is hidden (1) or visible (0).</td>
+                    </tr>
+                    <tr>
+                        <td>Updated At</td>
+                        <td>Integer</td>
+                        <td>The timestamp of when the user's profile was last updated.</td>
+                    </tr>
+                </tbody>
+                
+            </table>
+            <h4 id="content-item-description">Description Item</h4>
+            <pre>
+                <h4>Json example of a <a class="highlighted scroll-to-link active" data-target="content-item-description">Description</a></h4>
+                <code class="highlighted break-word">
+{
+  "description": "please\n",
+  "last_updated": 1728072672
+}
+</code>
+            </pre>
+            <table class="central-overflow-x">
+                <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Description</td>
+                        <td>String</td>
+                        <td>The description of the user (may have newlines).</td>
+                    </tr>
+                    <tr>
+                        <td>Last Updated</td>
+                        <td>Integer</td>
+                        <td>Unix timestamp for when the description was updated.</td>
+                    </tr>
+                </tbody>
+                
+            </table>
         </div>
         <div class="overflow-hidden content-section" id="content-changelogs">
             <h2>changelogs</h2>
@@ -560,7 +774,7 @@ This will return a list of <a class="highlighted scroll-to-link active" data-tar
             </p>
             <br>
         </div>
-        <div class="overflow-hidden content-section" id="content-rewards">
+        <div class="overflow-hidden content-section" id="content-comments">
             <h2>Comments</h2>
             
                         <pre>
@@ -642,7 +856,7 @@ This will return a list of <a class="highlighted scroll-to-link active" data-tar
                         <td>Your API key.</td>
                     </tr>
                     <tr>
-                        <td>(Optional) User ID</td>
+                        <td>User ID</td>
                         <td>Integer</td>
                         <td>The user ID of the comment author. (Discord)</td>
                     </tr>
@@ -656,6 +870,197 @@ This will return a list of <a class="highlighted scroll-to-link active" data-tar
                 </table>
             </p>
             <br>
+        </div>
+        <div class="overflow-hidden content-section" id="content-users">
+            <h2>Users</h2>
+            
+                        <pre>
+                            <h4>Example request | fetching user:</h4>
+                            <code class="highlighted break-word">
+curl -X GET "https://api.jailbreakchangelogs.xyz/users/get?id=659865209741246514" \
+-H "Authorization: YOUR_API_KEY"      
+                            </code>
+This will return a <a class="highlighted scroll-to-link active" data-target="content-item-user">User</a> 
+                </pre>
+                        <pre>
+                            <h4>Example request | fetching user by partial name:</h4>
+                            <code class="highlighted break-word">
+curl -X GET "https://api.jailbreakchangelogs.xyz/users/get/name?name=jakobiis" \
+# Name can be partial
+-H "Authorization: YOUR_API_KEY"      
+                            </code>
+This will return a <a class="highlighted scroll-to-link active" data-target="content-item-user">User</a> 
+                </pre>
+                        <pre>
+                            <h4>Example request | fetching users settings:</h4>
+                            <code class="highlighted break-word">
+curl -X GET "https://api.jailbreakchangelogs.xyz/users/settings?user=659865209741246514" \
+-H "Authorization: YOUR_API_KEY"      
+                            </code>
+This will return a <a class="highlighted scroll-to-link active" data-target="content-item-settings">Settings</a> item
+                </pre>
+                <pre>
+                    <h4>Example request | fetching users followers:</h4>
+                    <code class="highlighted break-word">
+curl -X GET "https://api.jailbreakchangelogs.xyz/users/followers/get?user=659865209741246514" \
+-H "Authorization: YOUR_API_KEY"      
+                    </code>
+This will return a list of <a class="highlighted scroll-to-link active" data-target="content-item-follower">Followers</a>
+        </pre>
+        <pre>
+            <h4>Example request | fetching users following:</h4>
+            <code class="highlighted break-word">
+curl -X GET "https://api.jailbreakchangelogs.xyz/users/following/get?user=659865209741246514" \
+-H "Authorization: YOUR_API_KEY"      
+            </code>
+This will return a list of <a class="highlighted scroll-to-link active" data-target="content-item-followed">Followed</a> users
+        </pre>
+        <pre>
+            <h4>Example request | fetching users description:</h4>
+            <code class="highlighted break-word">
+curl -X GET "https://api.jailbreakchangelogs.xyz/users/description/get?user=659865209741246514" \
+-H "Authorization: YOUR_API_KEY"      
+            </code>
+This will return a <a class="highlighted scroll-to-link active" data-target="content-item-description">Description</a> item
+                </pre>
+        </pre>
+</code>               
+            <p>
+                There are multiple user endpoints:
+                <br>
+
+                <h4><code class="higlighted break-word">/users/get</code></h4>
+                <table class="central-overflow-x">
+                    <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Authorization</td>
+                        <td>String</td>
+                        <td>Your API key.</td>
+                    </tr>
+                    <tr>
+                        <td>User ID</td>
+                        <td>Integer</td>
+                        <td>The ID of the user to fetch. (Discord)</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <h4><code class="higlighted break-word">/users/get/name</code></h4>
+                <table class="central-overflow-x">
+                    <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Authorization</td>
+                        <td>String</td>
+                        <td>Your API key.</td>
+                    </tr>
+                    <tr>
+                        <td>Name</td>
+                        <td>String</td>
+                        <td>The Partial name of the (Discord) user to fetch.</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <h4><code class="higlighted break-word">/users/settings</code></h4>
+                <table class="central-overflow-x">
+                    <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Authorization</td>
+                        <td>String</td>
+                        <td>Your API key.</td>
+                    </tr>
+                    <tr>
+                        <td>User</td>
+                        <td>Integer</td>
+                        <td>The ID of the (Discord) user's settings to fetch.</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <h4><code class="higlighted break-word">/users/followers/get</code></h4>
+                <table class="central-overflow-x">
+                    <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Authorization</td>
+                        <td>String</td>
+                        <td>Your API key.</td>
+                    </tr>
+                    <tr>
+                        <td>User</td>
+                        <td>Integer</td>
+                        <td>The ID of the user to fetch. (Discord)</td>
+                    </tbody>
+                </table>
+                <h4><code class="higlighted break-word">/users/following/get</code></h4>
+                <table class="central-overflow-x">
+                    <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Authorization</td>
+                        <td>String</td>
+                        <td>Your API key.</td>
+                    </tr>
+                    <tr>
+                        <td>User</td>
+                        <td>Integer</td>
+                        <td>The ID of the user to fetch. (Discord)</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <h4><code class="higlighted break-word">/users/description/get</code></h4>
+                <table class="central-overflow-x">
+                    <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Authorization</td>
+                        <td>String</td>
+                        <td>Your API key.</td>
+                    </tr>
+                    <tr>
+                        <td>User</td>
+                        <td>Integer</td>
+                        <td>The ID of the (Discord) user's description to fetch.</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </p>    
         </div>
     </div>
         </div>
