@@ -3,7 +3,7 @@
 > [!CAUTION]
 > The only official sources for information and updates about the Jailbreak Changelogs API is https://docs.jailbreakchangelogs.xyz/ . Any other websites or platforms claiming to represent or provide content for this API are not controlled by us.
 
-![Logo](https://res.cloudinary.com/dsvlphknq/image/upload/v1727900260/logos/api_docs.png)
+![Logo](/images/api_docs.png)
 
 # Roblox Jailbreak Changelogs API Documentation
 
