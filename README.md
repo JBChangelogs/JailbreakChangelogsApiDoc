@@ -19,7 +19,7 @@ Our API offers:
 
 ## Versioning
 
-The current version of the API is v1.0.0, but please check the [Docs](https://docs.jailbreakchangelogs.xyz/) for any updates.
+The current version of the API is v1.1.0, but please check the [Docs](https://docs.jailbreakchangelogs.xyz/) for any updates.
 
 ## Support
 
