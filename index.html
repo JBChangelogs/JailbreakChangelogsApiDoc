@@ -1215,5 +1215,21 @@ This will return a list of <a class="highlighted scroll-to-link active" data-tar
         document.getElementById('last-updated').textContent = data.date;
       });
   </script>
+  <script>
+    window.addEventListener("load", function () {
+  // wait a few seconds
+  // extract the section from the url param
+  var url = new URL(window.location.href);
+  var section = url.searchParams.get("section");
+  if (section) {
+    var target = this.document.getElementById('content-' + section);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+    url.searchParams.delete("section");
+    window.history.replaceState({}, document.title, url);
+  }
+});
+  </script>
 </body>
 </html>

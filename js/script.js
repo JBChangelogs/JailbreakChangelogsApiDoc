@@ -98,16 +98,3 @@ window.addEventListener("scroll", function (e) {
   onScroll();
 });
 
-window.addEventListener("load", function () {
-  // wait a few seconds
-  setTimeout(function () {
-    var url = new URL(window.location.href);
-    var section = url.searchParams.get("section");
-    if (section) {
-      var target = document.getElementById("content-" + section);
-      if (target) {
-        target.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  }, 2000);
-});
