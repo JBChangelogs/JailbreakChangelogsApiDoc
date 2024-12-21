@@ -60,8 +60,8 @@
             <li class="scroll-to-link active" data-target="content-get-started">
                 <a>Get Started</a>
             </li>
-            <li class="scroll-to-link active" data-target="content-items">
-                <a>Items</a>
+            <li class="scroll-to-link active" data-target="content-api-items">
+                <a>API Items</a>
             </li>
             <li class="scroll-to-link" data-target="content-changelogs">
                 <a>Changelogs</a>
@@ -77,6 +77,9 @@
             </li>
             <li class="scroll-to-link" data-target="content-users">
                 <a>Users</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-items">
+                <a>Items</a>
             </li>
         </ul>
     </div>
@@ -118,18 +121,18 @@
                     If you have any questions, concerns, or need help, please don't hesitate to reach out to us at <a href="mailto:support@jailbreakchangelogs.xyz">support@jailbreakchangelogs.xyz</a>.
                 </p>
         </div>
-        <div class="overflow-hidden content-section" id="content-items">
+        <div class="overflow-hidden content-section" id="content-api-items">
             <h2>Items</h2>
             <h4 id="content-item-changelog">Changelog Item</h4>
             <pre>
                 <h4>Json example of a <a class="highlighted scroll-to-link active" data-target="content-item-changelog">Changelog</a> item:</h4>
                 <code class="highlighted break-word">
-                    {
-                        "id": 2,
-                        "title": "April 29th 2017 / SUPER  CAR UPDATE",
-                        "sections": "- New vehicle: La Matador  \n- Jumping out of a helicopter now deploys a parachute  \n- New game pass: VIP Game Pass  \n- Volcano Criminal Base added  \n- Added a Prison Jumpsuit Rack in both criminal bases to allow criminals to remove their Prison Jumpsuit  \n- Other bug fixes & improvements\n",
-                        "image_url": "https://cdn.jailbreakchangelogs.xyz/images/changelogs/2.webp"
-                    }
+{
+    "id": 2,
+    "title": "April 29th 2017 / SUPER  CAR UPDATE",
+    "sections": "- New vehicle: La Matador  \n- Jumping out of a helicopter now deploys a parachute  \n- New game pass: VIP Game Pass  \n- Volcano Criminal Base added  \n- Added a Prison Jumpsuit Rack in both criminal bases to allow criminals to remove their Prison Jumpsuit  \n- Other bug fixes & improvements\n",
+    "image_url": "https://cdn.jailbreakchangelogs.xyz/images/changelogs/2.webp"
+}
                 </code>
             </pre>
             <table class="central-overflow-x">
@@ -171,11 +174,11 @@
             <pre>
                 <h4>Json example of a <a class="highlighted scroll-to-link active" data-target="content-item-season">Season</a> item:</h4>
                 <code class="highlighted break-word">
-                    {
-                        "season": 22,
-                        "title": "Visiting America",
-                        "description": "The theme of the season is called \"Visiting America\" (initially \"Season 22: Made in America\"), which is featuring prizes themed around the United States of America. The season began on June 21, 2024 and ended on September 17, 2024, and lasted for 87 days. This makes it the longest contract-based season."
-                    }
+{
+    "season": 22,
+    "title": "Visiting America",
+    "description": "The theme of the season is called \"Visiting America\" (initially \"Season 22: Made in America\"), which is featuring prizes themed around the United States of America. The season began on June 21, 2024 and ended on September 17, 2024, and lasted for 87 days. This makes it the longest contract-based season."
+}
                 </code>
             </pre>
             <table class="central-overflow-x">
@@ -211,15 +214,15 @@
             <pre>
                 <h4>Json example of a <a class="highlighted scroll-to-link active" data-target="content-item-reward">Reward</a> item:</h4>
                 <code class="highlighted break-word">
-                    {
-                        "id": 247,
-                        "season_number": 22,
-                        "item": "Fabulous Wall Furniture",
-                        "requirement": "Level 2",
-                        "link": "https://cdn.jailbreakchangelogs.xyz/images/seasons/22/2.webp",
-                        "exclusive": "False",
-                        "bonus": "False"
-                    }
+{
+    "id": 247,
+    "season_number": 22,
+    "item": "Fabulous Wall Furniture",
+    "requirement": "Level 2",
+    "link": "https://cdn.jailbreakchangelogs.xyz/images/seasons/22/2.webp",
+    "exclusive": "False",
+    "bonus": "False"
+}
                 </code>
             </pre>
             <table class="central-overflow-x">
@@ -282,14 +285,14 @@
             <pre>
                 <h4>Json example of a <a class="highlighted scroll-to-link active" data-target="content-item-comment">Comment</a> item:</h4>
                 <code class="highlighted break-word">
-                    {
-                        "id": 41,
-                        "user_id": "659865209741246514",
-                        "content": "1",
-                        "date": 1727736732,
-                        "item_id": 23,
-                        "item_type": "season"
-                    }
+{
+    "id": 41,
+    "user_id": "659865209741246514",
+    "content": "1",
+    "date": 1727736732,
+    "item_id": 23,
+    "item_type": "season"
+}
                 </code>
             </pre>
             <table class="central-overflow-x">
@@ -338,17 +341,23 @@
                     <td>
                         The type of comment this is, such as changelog or season.
                     </td>
-                </tr>
+                    <tr>
+                        <td>Edited At</td>
+                        <td>Integer</td>
+                        <td>
+                            The unix timestamp of the edited comment, null if none.
+                        </td>
+                    </tr>
                 </tbody>
             </table>
             <h4 id="content-item-follower">Follower Item</h4>
             <pre>
                 <h4>Json example of a <a class="highlighted scroll-to-link active" data-target="content-item-follower">Follower</a>:</h4>
                 <code class="highlighted break-word">
-                    {
-                        "follower_id": "1019539798383398946",
-                        "created_at": 1731255076
-                    }
+{
+    "follower_id": "1019539798383398946",
+    "created_at": 1731255076
+}
                 </code>
             </pre>
             <table class="central-overflow-x">
@@ -376,10 +385,10 @@
             <pre>
                 <h4>Json example of a <a class="highlighted scroll-to-link active" data-target="content-item-followed">Followed</a> user:</h4>
                 <code class="highlighted break-word">
-                    {
-                        "followed_id": "1019539798383398946",
-                        "created_at": 1728205706
-                    }
+{
+    "followed_id": "1019539798383398946",
+    "created_at": 1728205706
+}
                 </code>
             </pre>
             <table class="central-overflow-x">
@@ -407,15 +416,15 @@
             <pre>
                 <h4>Json example of a <a class="highlighted scroll-to-link active" data-target="content-item-user">User</a></h4>
                 <code class="highlighted break-word">
-                    {
-                        "id": "659865209741246514",
-                        "username": "jakobiis",
-                        "avatar": "556833499d1f3f7cc3cc0d9eca75df7c",
-                        "banner": null,
-                        "accent_color": 2959918,
-                        "global_name": "Jakobiis",
-                        "locale": "en-US"
-                    }
+{
+    "id": "659865209741246514",
+    "username": "jakobiis",
+    "avatar": "556833499d1f3f7cc3cc0d9eca75df7c",
+    "banner": null,
+    "accent_color": 2959918,
+    "global_name": "Jakobiis",
+    "locale": "en-US"
+}
                 </code>
             </pre>
             <table class="central-overflow-x">
@@ -463,15 +472,15 @@
             <pre>
                 <h4>Json example of <a class="highlighted scroll-to-link active" data-target="content-item-settings">Settings</a></h4>
                 <code class="highlighted break-word">
-                    {
-                        "user_id": "1019539798383398946",
-                        "profile_public": 1,
-                        "show_recent_comments": 1,
-                        "hide_following": 1,
-                        "hide_followers": 1,
-                        "banner_discord": 1,
-                        "updated_at": 1729626069
-                    }
+{
+    "user_id": "1019539798383398946",
+    "profile_public": 1,
+    "show_recent_comments": 1,
+    "hide_following": 1,
+    "hide_followers": 1,
+    "banner_discord": 1,
+    "updated_at": 1729626069
+}
                 </code>
             </pre>
             <table class="central-overflow-x">
@@ -520,10 +529,10 @@
             <pre>
                 <h4>Json example of a <a class="highlighted scroll-to-link active" data-target="content-item-description">Description</a></h4>
                 <code class="highlighted break-word">
-                    {
-                        "description": "this is truly amazing",
-                        "last_updated": 1728216068
-                    }
+{
+    "description": "this is truly amazing",
+    "last_updated": 1728216068
+}
                 </code>
             </pre>
             <table class="central-overflow-x">
@@ -572,8 +581,16 @@ This will return a list of <a class="highlighted scroll-to-link active" data-tar
 
 
                 </pre>
+                                        <pre>
+      <h4>Example request | fetching latest changelog:</h4>
+                            <code class="highlighted break-word">
+curl -X GET "https://api.jailbreakchangelogs.xyz/changelogs/latest" \
+-H "Authorization: YOUR_API_KEY"
+</code>
+This will return a <a class="highlighted scroll-to-link active" data-target="content-item-changelog">Changelog</a> item
+                </pre>
             <p>
-                There are two changelog endpoints:
+                There are three changelog endpoints:
                 <br>
 
                 <h4><code class="higlighted break-word">/changelogs/get</code></h4>
@@ -622,6 +639,23 @@ This will return a list of <a class="highlighted scroll-to-link active" data-tar
                     </tr>
                     </tbody>
                 </table>
+                <h4><code class="higlighted break-word">/changelogs/latest</code> </h4>
+                <table class="central-overflow-x">
+                    <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Authorization</td>
+                        <td>String</td>
+                        <td>Your API key.</td>
+                    </tr>
+                    </tbody>
+                </table>
             </p>
             <br>
         </div>
@@ -639,15 +673,23 @@ This will return a <a class="highlighted scroll-to-link active" data-target="con
                 </pre>
 
                                         <pre>
-      <h4>Example request | fetching all changelogs:</h4>
+      <h4>Example request | fetching all seasons:</h4>
                             <code class="highlighted break-word">
-curl -X GET "https://api.jailbreakchangelogs.xyz/season/list" \
+curl -X GET "https://api.jailbreakchangelogs.xyz/seasons/list" \
 -H "Authorization: YOUR_API_KEY"
 </code>
 This will return a list of <a class="highlighted scroll-to-link active" data-target="content-item-changelog">Season</a> items
 
 
 
+                </pre>
+<pre>
+        <h4>Example request | fetching latest season:</h4>
+                            <code class="highlighted break-word">
+curl -X GET "https://api.jailbreakchangelogs.xyz/seasons/latest" \
+-H "Authorization: YOUR_API_KEY"
+</code>
+This will return a <a class="highlighted scroll-to-link active" data-target="content-item-season">Season</a> item
                 </pre>
             <p>
                 There are two season endpoints:
@@ -696,6 +738,23 @@ This will return a list of <a class="highlighted scroll-to-link active" data-tar
                         <td> <a class="alert-icon scroll-to-link" data-target="content-notice" href="#" title="This is not implemented yet!">!</a> Limit</td>
                         <td>Integer</td>
                         <td>The Limit of <a class="highlighted scroll-to-link active" data-target="content-item-season">Seasons</a> to fetch.</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <h4><code class="higlighted break-word">/seasons/latest</code> </h4>
+                <table class="central-overflow-x">
+                    <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Authorization</td>
+                        <td>String</td>
+                        <td>Your API key.</td>
                     </tr>
                     </tbody>
                 </table>
@@ -1065,7 +1124,79 @@ This will return a <a class="highlighted scroll-to-link active" data-target="con
                     </tr>
                     </tbody>
                 </table>
+
             </p>    
+        </div>
+        <div class="overflow-hidden content-section" id="content-items">
+            <h2>Items</h2>
+            
+                        <pre>
+                            <h4>Example request | fetching item:</h4>
+                            <code class="highlighted break-word">
+curl -X GET "https://api.jailbreakchangelogs.xyz/items/get?name=torpedo&type=vehicle" \
+-H "Authorization: YOUR_API_KEY"      
+                            </code>
+This will return an <a class="highlighted scroll-to-link active" data-target="content-item-user">Items</a> 
+                </pre>
+                        <pre>
+                            <h4>Example request | fetching user by partial name:</h4>
+                            <code class="highlighted break-word">
+curl -X GET "https://api.jailbreakchangelogs.xyz/items/list" \
+-H "Authorization: YOUR_API_KEY"      
+                            </code>
+This will return a list of <a class="highlighted scroll-to-link active" data-target="content-item-user">Items</a> 
+                </pre>
+        <pre>
+            <p>
+                There are two item endpoints:
+                <br>
+
+                <h4><code class="higlighted break-word">/items/get</code></h4>
+                <table class="central-overflow-x">
+                    <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Authorization</td>
+                        <td>String</td>
+                        <td>Your API key.</td>
+                    </tr>
+                    <tr>
+                        <td>Item Name</td>
+                        <td>Text</td>
+                        <td>The name of the item</td>
+                    </tr>
+                    <tr>
+                        <td>(Optional) Item Type</td>
+                        <td>Text</td>
+                        <td>The name of the item</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <h4><code class="higlighted break-word">/items/list</code></h4>
+                <table class="central-overflow-x">
+                    <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Authorization</td>
+                        <td>String</td>
+                        <td>Your API key.</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </p>    
+        </div>
         </div>
     </div>
         </div>

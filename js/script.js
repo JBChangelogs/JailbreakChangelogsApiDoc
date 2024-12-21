@@ -97,3 +97,17 @@ window.addEventListener("scroll", function (e) {
   e.preventDefault();
   onScroll();
 });
+
+window.addEventListener("load", function () {
+  // extract the section from the url param
+  var url = new URL(window.location.href);
+  var section = url.searchParams.get("section");
+  if (section) {
+    var target = this.document.getElementById('content-' + section);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+    url.searchParams.delete("section");
+    window.history.replaceState({}, document.title, url);
+  }
+});
